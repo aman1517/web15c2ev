@@ -1,12 +1,18 @@
+import { useState } from "react";
 export const AddStudent = () => {
+    const [name,setname]= useState('');
   let cssStyle={
     width:'70%',
     hieght:'400px',
    
     margin:'auto'
   }
+  const handelsumit=(event)=>{
+  event.preventDeafult()
+  }
+ 
   return (
-    <form className="addstudent" style={cssStyle}>
+    <form className="addstudent" style={cssStyle} onSubmit={handelsumit}>
       <div>
         Firstname:{" "}
         <input
@@ -14,6 +20,7 @@ export const AddStudent = () => {
           name="first_name"
           className="first_name"
           placeholder="enter first name"
+         onChange={(e)=>setname(e.target.value)}
         />
       </div>
       <div>
@@ -24,6 +31,8 @@ export const AddStudent = () => {
           name="last_name"
           className="last_name"
           placeholder="enter last name"
+          onChange={(e)=>setname(e.target.value)}
+       
         />
       </div>
       <div>
@@ -34,6 +43,8 @@ export const AddStudent = () => {
           name="email"
           className="email"
           placeholder="enter email"
+          onChange={(e)=>setname(e.target.value)}
+       
         />
       </div>
 
@@ -46,6 +57,7 @@ export const AddStudent = () => {
             className="male"
             type="radio"
             value={"male"}
+            onChange={(e)=>setname(e.target.value)}
           />{" "}
           Female{" "}
           <input
@@ -53,6 +65,7 @@ export const AddStudent = () => {
             className="female"
             type="radio"
             value={"female"}
+            onChange={(e)=>setname(e.target.value)}
           />
         </div>
       </div>
@@ -63,6 +76,8 @@ export const AddStudent = () => {
           name="age"
           className="age"
           placeholder="enter age"
+          onChange={(e)=>setname(e.target.value)}
+          
         />
       </div>
       <div>
@@ -72,6 +87,8 @@ export const AddStudent = () => {
           name="tenth_score"
           className="tenth_score"
           placeholder="enter 10th score"
+          onChange={(e)=>setname(e.target.value)}
+       
         />{" "}
       </div>
       <div>
@@ -81,6 +98,8 @@ export const AddStudent = () => {
           name="twelth_score"
           className="twelth_score"
           placeholder="enter 12th score"
+          onChange={(e)=>setname(e.target.value)}
+       
         />{" "}
       </div>
       <div>
